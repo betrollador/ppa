@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Table(name = "tb_tp_consulta_credito")
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
 @NamedQuery(name = "TipoConsultaCredito.findByTipo", query = "select t from TipoConsultaCredito t where t.tipoConsultaCredito LIKE CONCAT('%',?1,'%') order by t.tipoConsultaCredito")
-public class TipoConsultaCredito {
+public class TipoConsultaCredito { 
 
     @Id
     @Column(name = "CD_TIPO_CONSULTA_CREDITO")
