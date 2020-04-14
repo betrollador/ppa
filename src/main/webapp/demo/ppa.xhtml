@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Parametrização Pré-Aprovado</ui:define>
+
+    <ui:define name="content">
+        <p:panel header="Parametrização Pré-Aprovado">
+            <table>
+                <tr>
+                    <td>
+                        <p:outputLabel value="Tipo Consulta:" for="tc" />
+                        <p:autoComplete id="tc" value="#{ppaController.tipoConsultaCreditoSelected}" completeMethod="#{ppaController.buscaAutoCompleteTipoConsultaCredito}"
+                                        var="tipoconsulta" itemLabel="#{tipoconsulta.tipoConsultaCredito}" itemValue="#{tipoconsulta.codigoTipoConsultaCredito}" forceSelection="true" />
+                    </td>
+                </tr>
+            </table>
+        </p:panel>
+    </ui:define>
+
+</ui:composition>
