@@ -3,11 +3,12 @@ package com.bv.ppa.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "tb_prmto_recusa_cliente")
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
-@NamedQuery(name = "PrmtoRecusaCliente.findByTipo", query = "select t from PrmtoRecusaCliente t where t.codigoTipoConsultaCredito = ? AND tipoEntradaProdutoPreAnalise = ?")
+@NamedQuery(name = "PrmtoRecusaCliente.findByTipo", query = "select t from PrmtoRecusaCliente t where t.codigoTipoConsultaCredito = ?1 AND tipoEntradaProdutoPreAnalise = ?2")
 public class PrmtoRecusaCliente {
 
     @Id
@@ -37,9 +38,11 @@ public class PrmtoRecusaCliente {
     private Integer qtDiasAtraso;
 
     @Column(name = "DT_INICIO_VIGENCIA")
+    @Temporal(TemporalType.DATE)
     private Date dtInicioVigencia;
 
     @Column(name = "DT_FIM_VIGENCIA")
+    @Temporal(TemporalType.DATE)
     private Date dtFimVigencia;
 
     @Column(name = "DS_LOGIN")
