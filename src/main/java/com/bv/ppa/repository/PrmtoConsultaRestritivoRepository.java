@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface EntradaProdutoPreAnaliseRepository extends JpaRepository<EntradaProdutoPreAnalise, Long> {
-    public List<EntradaProdutoPreAnalise> findById(String id);
+public interface PrmtoConsultaRestritivoRepository extends JpaRepository<PrmtoConsultaRestritivo, Long> {
+    public List<PrmtoConsultaRestritivo> findById(String id);
 }

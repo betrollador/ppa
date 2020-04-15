@@ -23,7 +23,7 @@ public class EntradaProdutoPreAnaliseController {
 
     // Get a Single Note
     @GetMapping("/entradaprodutopreanalise/{codigoEntradaProdutoPreAnalise}")
-    public List<EntradaProdutoPreAnalise> getUsuarioByNome(@PathVariable(value = "codigoEntradaProdutoPreAnalise") String tipo) {
+    public List<EntradaProdutoPreAnalise> getUsuarioByCodigo(@PathVariable(value = "codigoEntradaProdutoPreAnalise") String tipo) {
         return entradaProdutoPreAnaliseRepository.findByTipo(tipo);
     }
 

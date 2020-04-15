@@ -8,7 +8,7 @@ import java.util.Date;
 @Entity
 @Table(name = "tb_entrada_produto_pre_analise")
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
-@NamedQuery(name = "EntradaProdutoPreAnalise.findByTipo", query = "select e from EntradaProdutoPreAnalise e wehre e.codigoEntradaProdutoPreAnalise = ?1")
+@NamedQuery(name = "EntradaProdutoPreAnalise.findById", query = "select e from EntradaProdutoPreAnalise e wehre e.codigoEntradaProdutoPreAnalise = ?1")
 public class EntradaProdutoPreAnalise {
 
     @Id
