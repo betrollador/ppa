@@ -8,7 +8,7 @@ import java.util.Date;
 @Entity
 @Table(name = "tb_prmto_recusa_cliente")
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
-@NamedQuery(name = "PrmtoRecusaCliente.findByTipo", query = "select t from PrmtoRecusaCliente t where t.codigoTipoConsultaCredito = ?1 AND tipoEntradaProdutoPreAnalise = ?2")
+@NamedQuery(name = "PrmtoRecusaCliente.findByTipo", query = "select t from PrmtoRecusaCliente t where t.codigoTipoConsultaCredito = ?1 AND t.tipoEntradaProdutoPreAnalise = ?2")
 public class PrmtoRecusaCliente {
 
     @Id
@@ -66,19 +66,19 @@ public class PrmtoRecusaCliente {
     }
 
     public String getNuInicioFaixaPesquisaCpf() {
-        return NuInicioFaixaPesquisaCpf;
+        return nuInicioFaixaPesquisaCpf;
     }
 
     public void setNuInicioFaixaPesquisaCpf(String nuInicioFaixaPesquisaCpf) {
-        NuInicioFaixaPesquisaCpf = nuInicioFaixaPesquisaCpf;
+        nuInicioFaixaPesquisaCpf = nuInicioFaixaPesquisaCpf;
     }
 
     public String getNuFimFaixaPesquisaCpf() {
-        return NuFimFaixaPesquisaCpf;
+        return nuFimFaixaPesquisaCpf;
     }
 
     public void setNuFimFaixaPesquisaCpf(String nuFimFaixaPesquisaCpf) {
-        NuFimFaixaPesquisaCpf = nuFimFaixaPesquisaCpf;
+        nuFimFaixaPesquisaCpf = nuFimFaixaPesquisaCpf;
     }
 
     public Integer getCodigoRetornoRecusa() {
@@ -174,8 +174,8 @@ public class PrmtoRecusaCliente {
         return "PrmtoRecusaCliente{" +
                 "codigoPrmtoRecusaCliente=" + codigoPrmtoRecusaCliente +
                 ", codigoTipoConsultaCredito=" + codigoTipoConsultaCredito +
-                ", NuInicioFaixaPesquisaCpf='" + NuInicioFaixaPesquisaCpf + '\'' +
-                ", NuFimFaixaPesquisaCpf='" + NuFimFaixaPesquisaCpf + '\'' +
+                ", NuInicioFaixaPesquisaCpf='" + nuInicioFaixaPesquisaCpf + '\'' +
+                ", NuFimFaixaPesquisaCpf='" + nuFimFaixaPesquisaCpf + '\'' +
                 ", tipoEntradaProdutoPreAnalise='" + tipoEntradaProdutoPreAnalise + '\'' +
                 ", codigoRetornoRecusa=" + codigoRetornoRecusa +
                 ", descricaoRetornoRecusa='" + descricaoRetornoRecusa + '\'' +

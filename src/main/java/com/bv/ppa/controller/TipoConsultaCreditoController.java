@@ -23,7 +23,7 @@ public class TipoConsultaCreditoController {
 
     // Get a Single Note
     @GetMapping("/tipoconsultacredito/{nome}")
-    public List<TipoConsultaCredito> getUsuarioByNome(@PathVariable(value = "nome") String tipo) {
+    public List<TipoConsultaCredito> getTipoConsultaCreditoByNome(@PathVariable(value = "nome") String tipo) {
         return tipoConsultaCreditoRepository.findByTipo(tipo);
     }
 

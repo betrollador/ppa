@@ -1,5 +1,6 @@
 package com.bv.ppa.repository;
 
+import com.bv.ppa.model.EntradaProdutoPreAnalise;
 import com.bv.ppa.model.TipoConsultaCredito;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -8,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface EntradaProdutoPreAnaliseRepository extends JpaRepository<EntradaProdutoPreAnalise, Long> {
-    public List<EntradaProdutoPreAnalise> findById(String id);
+    public List<EntradaProdutoPreAnalise> findByNome(String nome);
 }

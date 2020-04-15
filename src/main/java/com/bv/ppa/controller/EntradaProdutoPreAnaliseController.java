@@ -1,6 +1,8 @@
 package com.bv.ppa.controller;
 
+import com.bv.ppa.model.EntradaProdutoPreAnalise;
 import com.bv.ppa.model.TipoConsultaCredito;
+import com.bv.ppa.repository.EntradaProdutoPreAnaliseRepository;
 import com.bv.ppa.repository.TipoConsultaCreditoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,9 +24,9 @@ public class EntradaProdutoPreAnaliseController {
     }
 
     // Get a Single Note
-    @GetMapping("/entradaprodutopreanalise/{codigoEntradaProdutoPreAnalise}")
-    public List<EntradaProdutoPreAnalise> getUsuarioByCodigo(@PathVariable(value = "codigoEntradaProdutoPreAnalise") String tipo) {
-        return entradaProdutoPreAnaliseRepository.findByTipo(tipo);
+    @GetMapping("/entradaprodutopreanalise/{nome}")
+    public List<EntradaProdutoPreAnalise> getUsuarioByNome(@PathVariable(value = "nome") String nome) {
+        return entradaProdutoPreAnaliseRepository.findByNome(nome);
     }
 
 }

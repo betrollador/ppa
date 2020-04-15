@@ -8,7 +8,7 @@ import java.util.Date;
 @Entity
 @Table(name = "tb_entrada_produto_pre_analise")
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
-@NamedQuery(name = "EntradaProdutoPreAnalise.findById", query = "select e from EntradaProdutoPreAnalise e wehre e.codigoEntradaProdutoPreAnalise = ?1")
+@NamedQuery(name = "EntradaProdutoPreAnalise.findByNome", query = "select e from EntradaProdutoPreAnalise e where e.nomeEntradaProdutoPreanalise LIKE CONCAT('%',?1,'%') order by e.codigoEntradaProdutoPreAnalise")
 public class EntradaProdutoPreAnalise {
 
     @Id
@@ -26,7 +26,7 @@ public class EntradaProdutoPreAnalise {
     private String descricaoIndtrProgramaPreanalise;
 
     @Column(name = "CD_ENTRADA_PRDTO_PRE_ANLSE_RFN")
-    private Integer codigoEntradaProdutoPreAnalise;
+    private Integer codigoEntradaProdutoPreAnaliseRfn;
 
     @Column(name = "DS_LOGIN")
     private String descricaoLogin;
@@ -104,6 +104,14 @@ public class EntradaProdutoPreAnalise {
 
     public void setDescricaoIndtrProgramaPreanalise(String descricaoIndtrProgramaPreanalise) {
         this.descricaoIndtrProgramaPreanalise = descricaoIndtrProgramaPreanalise;
+    }
+
+    public Integer getCodigoEntradaProdutoPreAnaliseRfn() {
+        return codigoEntradaProdutoPreAnaliseRfn;
+    }
+
+    public void setCodigoEntradaProdutoPreAnaliseRfn(Integer codigoEntradaProdutoPreAnaliseRfn) {
+        this.codigoEntradaProdutoPreAnaliseRfn = codigoEntradaProdutoPreAnaliseRfn;
     }
 
     @java.lang.Override

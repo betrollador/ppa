@@ -1,6 +1,8 @@
 package com.bv.ppa.controller;
 
+import com.bv.ppa.model.PrmtoConsultaRestritivo;
 import com.bv.ppa.model.TipoConsultaCredito;
+import com.bv.ppa.repository.PrmtoConsultaRestritivoRepository;
 import com.bv.ppa.repository.TipoConsultaCreditoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +20,7 @@ public class PrmtoConsultaRestritivoController {
     // Get All Notes
     @GetMapping("/prmtoconsultarestritivo")
     public List<PrmtoConsultaRestritivo> getAllPrmtoConsultaRestritivo() {
-        return prmtoRecusaClienteRepository.findAll();
+        return prmtoConsultaRestritivoRepository.findAll();
     }
 
     // Get a Single Note

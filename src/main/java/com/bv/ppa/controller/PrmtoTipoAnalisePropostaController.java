@@ -1,11 +1,13 @@
 package com.bv.ppa.controller;
 
-import com.bv.ppa.model.TipoConsultaCredito;
-import com.bv.ppa.repository.TipoConsultaCreditoRepository;
+import com.bv.ppa.model.PrmtoTipoAnaliseProposta;
+import com.bv.ppa.repository.PrmtoTipoAnalisePropostaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -17,13 +19,13 @@ public class PrmtoTipoAnalisePropostaController {
 
     // Get All Notes
     @GetMapping("/prmtotipoanaliseproposta")
-    public List<PrmtoConsultaRestritivo> getAllPrmtoTipoAnaliseProposta() {
+    public List<PrmtoTipoAnaliseProposta> getAllPrmtoTipoAnaliseProposta() {
         return prmtoTipoAnalisePropostaRepository.findAll();
     }
 
     // Get a Single Note
     @GetMapping("/prmtotipoanaliseproposta/{codigoPrmtoTipoAnaliseProposta}")
-    public List<PrmtoConsultaRestritivo> getUsuarioById(@PathVariable(value = "codigoPrmtoTipoAnaliseProposta") String id) {
+    public List<PrmtoTipoAnaliseProposta> getUsuarioById(@PathVariable(value = "codigoPrmtoTipoAnaliseProposta") String id) {
         return prmtoTipoAnalisePropostaRepository.findById(id);
     }
 

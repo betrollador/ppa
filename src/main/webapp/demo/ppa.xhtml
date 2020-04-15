@@ -9,15 +9,47 @@
 
     <ui:define name="content">
         <p:panel header="Parametrização Pré-Aprovado">
-            <table>
-                <tr>
-                    <td>
-                        <p:outputLabel value="Tipo Consulta:" for="tc" />
-                        <p:autoComplete id="tc" value="#{ppaController.tipoConsultaCreditoSelected}" completeMethod="#{ppaController.buscaAutoCompleteTipoConsultaCredito}"
-                                        var="tipoconsulta" itemLabel="#{tipoconsulta.tipoConsultaCredito}" itemValue="#{tipoconsulta.codigoTipoConsultaCredito}" forceSelection="true" />
-                    </td>
-                </tr>
-            </table>
+            <h:form id="form">
+                <p:growl id="msgs"/>
+                <table>
+                    <tr>
+                        <td>
+                            <p:outputLabel value="Tipo Consulta:" for="tc"/>
+                            <p:autoComplete id="tc" size="90" value="#{ppaController.tipoConsultaCreditoSelected}"
+                                            completeMethod="#{ppaController.buscaAutoCompleteTipoConsultaCredito}"
+                                            var="tipoconsulta" itemLabel="#{tipoconsulta.tipoConsultaCredito}"
+                                            itemValue="#{tipoconsulta.codigoTipoConsultaCredito}"
+                                            forceSelection="true"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p:dataTable id="bueraus" var="item" value="#{ppaController.listaPrmtoRecusaCliente}"
+                                         editable="true"
+                                         style="margin-bottom:20px">
+                                <f:facet name="header">
+                                    Bueraus
+                                </f:facet>
+                                <p:ajax event="rowEdit" listener="#{ppaController.onRowEdit}" update=":form:msgs"/>
+                                <p:ajax event="rowEditCancel" listener="#{ppaController.onRowCancel}"
+                                        update=":form:msgs"/>
+
+                                <p:column headerText="Id">
+                                    <p:cellEditor>
+                                        <f:facet name="output">
+                                            <h:outputText value="#{item.codigoPrmtoRecusaCliente}"/>
+                                        </f:facet>
+                                        <f:facet name="input">
+                                            <p:inputText id="modelInput" value="#{item.codigoPrmtoRecusaCliente}"
+                                                         style="width:100%"/>
+                                        </f:facet>
+                                    </p:cellEditor>
+                                </p:column>
+                            </p:dataTable>
+                        </td>
+                    </tr>
+                </table>
+            </h:form>
         </p:panel>
     </ui:define>
 
