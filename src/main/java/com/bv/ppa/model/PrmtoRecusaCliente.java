@@ -20,10 +20,10 @@ public class PrmtoRecusaCliente {
     private Integer codigoTipoConsultaCredito;
 
     @Column(name = "NU_INICIO_FAIXA_PESQUISA_CPF")
-    private String NuInicioFaixaPesquisaCpf;
+    private String nuInicioFaixaPesquisaCpf;
 
     @Column(name = "NU_FIM_FAIXA_PESQUISA_CPF")
-    private String NuFimFaixaPesquisaCpf;
+    private String nuFimFaixaPesquisaCpf;
 
     @Column(name = "TP_ENTRADA_PRODUTO_PRE_ANALISE")
     private String tipoEntradaProdutoPreAnalise;

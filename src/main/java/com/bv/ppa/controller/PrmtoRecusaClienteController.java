@@ -17,7 +17,7 @@ public class PrmtoRecusaClienteController {
 
     // Get All Notes
     @GetMapping("/prmtorecusacliente")
-    public List<PrmtoRecusaCliente> getAllTipoConsultaCredito() {
+    public List<PrmtoRecusaCliente> getAllPrmtoRecusaCliente() {
         return prmtoRecusaClienteRepository.findAll();
     }
 
